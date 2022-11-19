@@ -226,13 +226,15 @@
       document.getElementById("contents_page").innerHTML =
         '<div class="loading_half_circle_10px"></div>';
       loading_show();
+      document.getElementById("contents_page").scrollIntoView();
       request_promise(
-        "https://script.google.com/macros/s/AKfycbwYD2Zvrb4gZ8kqO7Ka6ZSNUCnD-Bm0pZ14DYoNbSnm-ItujmhKAy2bJY7DgXZUKdW1Vw/exec?mno=" +
+        "https://script.google.com/macros/s/AKfycbwbMv_kgQDoj5qdqkl0ZoRV1_bve5kz-aDp5hPySrRiSOuxEoIx7BNtx1anxKtFH7tSyQ/exec?mno=" +
           document.getElementById(input_ele_id).value
       ).then((html) => {
         document.getElementById("contents_page").innerHTML = JSON.parse(
           html.response
         ).output;
+        document.getElementById("contents_page").scrollIntoView();
       });
     }
 
